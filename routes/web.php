@@ -21,9 +21,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/* Routes for socialite */
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+/* Routes for socialite FACEBOOK */
+Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFacebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
+/* Routes for socialite github */
+Route::get('login/github', 'Auth\LoginController@redirectToProviderGithub');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallbackGithub');
 
 /*Importante dejar esta ruta al final*/
 Route::get('{path}', "HomeController@index")->where('path', '([A-z\d-\/_.`]+)?' );

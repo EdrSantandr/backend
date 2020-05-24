@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect();
+        //
     }
 
     /**
@@ -55,7 +55,39 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
+        //
+    }
+
+
+    public function redirectToProviderFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallbackFacebook()
+    {
         $user = Socialite::driver('facebook')->user();
+        dd($user);
+    }
+
+    public function redirectToProviderGithub()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallbackGithub()
+    {
+        $user = Socialite::driver('github')->user();
         dd($user);
     }
 }
