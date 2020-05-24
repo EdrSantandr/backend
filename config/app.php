@@ -175,7 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 		Intervention\Image\ImageServiceProvider::class,
-
+        /** Socialite provider **/
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -227,7 +228,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-		'Image' => Intervention\Image\Facades\Image::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        /* Socialite class for login */
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

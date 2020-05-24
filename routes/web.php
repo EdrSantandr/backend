@@ -21,5 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/* Routes for socialite */
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 /*Importante dejar esta ruta al final*/
 Route::get('{path}', "HomeController@index")->where('path', '([A-z\d-\/_.`]+)?' );
