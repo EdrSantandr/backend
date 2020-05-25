@@ -18,6 +18,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!--PWA Changes-->
+    @laravelPWA
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
