@@ -104,22 +104,67 @@ class LoginController extends Controller
     public function manageUser($userSocial,$provider){
         
         $users=User::where(['email' => $userSocial->email])->first();
-        //dd($users['id']) =1310323;
+        //dd($userSocial);
         if ($users){
             Auth::login($users);
             return redirect('/');
         }else{
-            //dd($userSocial['name']);
+            $base64FileName=$this->save_base64_encode_image($userSocial->avatar);
             $name=is_null($userSocial->name)?"":$userSocial->name;
             $user = User::create([
                 'name'          => $name,
                 'email'         => $userSocial->email,
                 'image'         => $userSocial->avatar,
+                'photo'         => $base64FileName,
                 'provider_id'   => $userSocial->id,
                 'provider'      => $provider,
             ]);
             Auth::login($user);
             return redirect(RouteServiceProvider::HOME);
         }
+        
     }
+    /**Convert from base64 to save file and return filename**/
+    public function save_base64_encode_image ($url=string) {
+        $mime=$this->get_image_mime_type($url); //Obtener el mime de la imagen url
+        $imageData=base64_encode(file_get_contents($url)); //Encodear el archivo en base4
+        $imageBase64Mime = 'data:'.$mime.';base64,'.$imageData; //formar el base64 con encabezados
+        //dd($imageBase64Mime);
+        $name= time().'.'.explode('/',explode(':',substr($imageBase64Mime,0, strpos($imageBase64Mime,';')))[1])[1];
+        \Image::make($imageBase64Mime)->save(public_path('img/profile/').$name);
+        return $name;
+    }
+    /** Get the mime from url*/
+    public function get_image_mime_type($image_path)
+    {
+        $mimes  = array(
+            IMAGETYPE_GIF => "image/gif",
+            IMAGETYPE_JPEG => "image/jpg",
+            IMAGETYPE_PNG => "image/png",
+            IMAGETYPE_SWF => "image/swf",
+            IMAGETYPE_PSD => "image/psd",
+            IMAGETYPE_BMP => "image/bmp",
+            IMAGETYPE_TIFF_II => "image/tiff",
+            IMAGETYPE_TIFF_MM => "image/tiff",
+            IMAGETYPE_JPC => "image/jpc",
+            IMAGETYPE_JP2 => "image/jp2",
+            IMAGETYPE_JPX => "image/jpx",
+            IMAGETYPE_JB2 => "image/jb2",
+            IMAGETYPE_SWC => "image/swc",
+            IMAGETYPE_IFF => "image/iff",
+            IMAGETYPE_WBMP => "image/wbmp",
+            IMAGETYPE_XBM => "image/xbm",
+            IMAGETYPE_ICO => "image/ico");
+
+        if (($image_type = exif_imagetype($image_path))
+            && (array_key_exists($image_type ,$mimes)))
+        {
+            return $mimes[$image_type];
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
 }
