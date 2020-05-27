@@ -199,6 +199,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         </ul>
                     </li>
+                    <!-- Nuevo enlace para tipos de usuarios-->
+                    <li class="nav-item has-treeview">
+                        <router-link to="/types" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends pink"></i>
+                            <p>
+                                {{ __('master.user_type') }}
+                            </p>
+                        </router-link>
+                    </li>
                     @can('isAdmin')
 					<li class="nav-item">
                         <router-link to="/developer" class="nav-link">
