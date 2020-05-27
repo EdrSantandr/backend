@@ -65860,7 +65860,7 @@ var render = function() {
                                 staticClass: "col-form-label",
                                 attrs: { for: "name" }
                               },
-                              [_vm._v("Name")]
+                              [_vm._v(_vm._s(_vm.__("master.profileName")))]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -65913,7 +65913,7 @@ var render = function() {
                                 staticClass: "col-form-label",
                                 attrs: { for: "Email" }
                               },
-                              [_vm._v("Email")]
+                              [_vm._v(_vm._s(_vm.__("master.profileEmail")))]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -65966,7 +65966,11 @@ var render = function() {
                                 staticClass: "col-form-label",
                                 attrs: { for: "Bio" }
                               },
-                              [_vm._v("Bio")]
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.__("master.profileBiography"))
+                                )
+                              ]
                             ),
                             _vm._v(" "),
                             _c("textarea", {
@@ -83244,6 +83248,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 /**INICIO Import for vform**/
 
 
+/** Localization **/
+
+__webpack_require__(/*! ./languages */ "./resources/js/languages.js");
+
+vue__WEBPACK_IMPORTED_MODULE_4___default.a.mixin(__webpack_require__(/*! ./trans */ "./resources/js/trans.js"));
 /**Import Javascript para accesos**/
 
 
@@ -84132,6 +84141,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PersonalAccessTokens_vue_vue_type_template_id_49962cc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/languages.js":
+/*!***********************************!*\
+  !*** ./resources/js/languages.js ***!
+  \***********************************/
+/*! exports provided: defaultLocale, locales */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultLocale", function() { return defaultLocale; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "locales", function() { return locales; });
+var defaultLocale = 'en';
+var locales = [{
+  code: 'en',
+  name: 'English',
+  dir: 'ltr'
+}, {
+  code: 'es',
+  name: 'Espanol',
+  dir: 'rtl'
+}];
+
+/***/ }),
+
+/***/ "./resources/js/trans.js":
+/*!*******************************!*\
+  !*** ./resources/js/trans.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  methods: {
+    /**
+     * Translate the given key.
+     */
+    __: function __(key, replace) {
+      var translation,
+          translationNotFound = true;
+
+      try {
+        translation = key.split('.').reduce(function (t, i) {
+          return t[i] || null;
+        }, window._translations[window._locale].php);
+
+        if (translation) {
+          translationNotFound = false;
+        }
+      } catch (e) {
+        translation = key;
+      }
+
+      if (translationNotFound) {
+        translation = window._translations[window._locale]['json'][key] ? window._translations[window._locale]['json'][key] : key;
+      }
+
+      _.forEach(replace, function (value, key) {
+        translation = translation.replace(':' + key, value);
+      });
+
+      return translation;
+    }
+  }
+};
 
 /***/ }),
 

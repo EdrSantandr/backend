@@ -1451,10 +1451,6 @@
                 }
             },
             "autoload": {
-                "files": [
-                    "src/Illuminate/Foundation/helpers.php",
-                    "src/Illuminate/Support/helpers.php"
-                ],
                 "psr-4": {
                     "Illuminate\\": "src/Illuminate/"
                 }
@@ -5346,10 +5342,7 @@
             "autoload": {
                 "psr-4": {
                     "Facade\\FlareClient\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -5423,10 +5416,7 @@
             "autoload": {
                 "psr-4": {
                     "Facade\\Ignition\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [

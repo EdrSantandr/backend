@@ -6,6 +6,10 @@
         'users' => 'Usuarios',
         'developer' => 'Desarrollador',
         'profile' => 'Mi perfil',
-        'dashboard' => 'Menu'
+        'dashboard' => 'Menu',
+        /** PROFILE COMPONENT VUE**/
+        'profileName'=>'Nombre',
+        'profileEmail'=>'Correo',
+        'profileBiography'=>'Biografia',
     ]
 ?>

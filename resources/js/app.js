@@ -14,6 +14,9 @@ import moment from 'moment'
 /**INICIO Import for vform**/
 import { Form, HasError, AlertError } from 'vform'
 
+/** Localization **/
+require('./languages')
+Vue.mixin(require('./trans'))
 
 /**Import Javascript para accesos**/
 import Gate from "./Gate";

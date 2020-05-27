@@ -177,6 +177,8 @@ return [
 		Intervention\Image\ImageServiceProvider::class,
         /** Socialite provider **/
         Laravel\Socialite\SocialiteServiceProvider::class,
+        /** Translation service provider for localization**/
+        App\Providers\TranslationServiceProvider::class,
     ],
 
     /*

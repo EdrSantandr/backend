@@ -137,19 +137,19 @@
 									<!--Form del user-->
 									<div class="modal-body">
 										<div class="form-group">
-											<label for="name" class="col-form-label">Name</label>
+											<label for="name" class="col-form-label">{{ __('master.profileName') }}</label>
 											<input v-model="form.name" type="text" name="name" placeholder='Name'
 											class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
 											<has-error :form="form" field="name"></has-error>
 										</div>
 										<div class="form-group">
-											<label for="Email" class="col-form-label">Email</label>
+											<label for="Email" class="col-form-label">{{ __('master.profileEmail') }}</label>
 											<input v-model="form.email" type="text" name="email" placeholder='Email Address'
 											class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
 											<has-error :form="form" field="email"></has-error>
 										</div>
 										<div class="form-group">
-											<label for="Bio" class="col-form-label">Bio</label>
+											<label for="Bio" class="col-form-label">{{ __('master.profileBiography') }}</label>
 											<textarea v-model="form.bio" type="text" name="bio" placeholder='Biography'
 											class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
 											<has-error :form="form" field="bio"></has-error>
