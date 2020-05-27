@@ -31,7 +31,7 @@
 											<i class="fa fa-edit blue"></i>
 										</a>
 										&nbsp;
-										<a href="#" @click="deleteUser(type.id)">
+										<a href="#" @click="deleteType(type.id)">
 											<i class="fa fa-trash red"></i>
 										</a>
 									</td>
@@ -131,7 +131,7 @@
 				this.form.reset(); //Clear errors
 				$('#addNew').modal('show');
 			},
-			deleteUser(id){
+			deleteType(id){
 				swal.fire({
 					title: 'Are you sure?',
 					text: "You won't be able to revert this!",
@@ -143,7 +143,7 @@
 					}).then((result) => {
 					//Send Request to server to the server	
 						if (result.value){
-							this.form.delete('api/user/'+id).then(()=>{
+							this.form.delete('api/type/'+id).then(()=>{
 							swal.fire(
 								'Deleted!',
 								'Your type has been deleted.',
