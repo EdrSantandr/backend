@@ -100,6 +100,11 @@ const router = new Router ({
 			component:	require('./components/Types.vue').default
 		},
 		{
+			path:	'/stories',
+			name:	'stories',
+			component:	require('./components/Stories.vue').default
+		},
+		{
 			path:	'/profile',
 			name:	'profile',
 			component:	require('./components/Profile.vue').default

@@ -208,6 +208,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </p>
                         </router-link>
                     </li>
+                    <!-- Nuevo enlace para story-->
+                    <li class="nav-item has-treeview">
+                        <router-link to="/stories" class="nav-link">
+                        <i class="nav-icon fas fa-book white"></i>
+                            <p>
+                                {{ __('master.story') }}
+                            </p>
+                        </router-link>
+                    </li>
                     @can('isAdmin')
 					<li class="nav-item">
                         <router-link to="/developer" class="nav-link">

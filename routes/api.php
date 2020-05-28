@@ -29,3 +29,10 @@ Route::middleware('auth:api')->get('/type', function (Request $request) {
 Route::apiResources(['type' => 'API\TypeController']);
 Route::get('findType', 'API\TypeController@search');
 Route::get('types', 'API\TypeController@loadAllTypes');
+
+/** Routes for Story**/
+Route::middleware('auth:api')->get('/story', function (Request $request) {
+    return $request->story();
+});
+Route::apiResources(['story' => 'API\StoryController']);
+Route::get('findStory', 'API\StoryController@search');
