@@ -154,6 +154,16 @@
 											class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
 											<has-error :form="form" field="bio"></has-error>
 										</div>
+										<!--Modification Select box from database-->
+										<div class="form-group">
+											<label for="type_id" class="col-form-label">{{ __('master.profileTypeUser') }}</label>
+											
+											<select name="type_id" v-model="form.type_id" class="form-control" :v-bind="form.type_id">
+												<option  v-for="type in types" :value="type.id" v-bind:key="type">{{ type.name }}</option>
+											</select>
+											<has-error :form="form" field="type_id"></has-error>
+
+										</div>
 										<div class="form-group">
 											<label for="photo" class="col-form-label">Profile Photo</label>
 											<div class="input-group">
@@ -195,6 +205,7 @@
 		data() {
 			return {
 				userPhoto:'',
+				types:{},
 				form: new Form({
 					id: '',
 					name: '',
@@ -202,7 +213,8 @@
 					password: '',
 					type:'',
 					bio:'',
-					photo:''
+					photo:'',
+					type_id:'',
 				})
 			}
 		},
@@ -234,7 +246,12 @@
 						title: 'Something went wrong!'
 						})
 				})
-            },
+			},
+			loadTypes(){
+				if (this.$gate.isAdminOrAuthor()){
+					axios.get('api/types').then(({ data })=>(this.types = data));
+				}
+			},
 			updateProfilePhoto(e){
 				//console.log('Event uploading');
 				let file = e.target.files[0];
@@ -259,6 +276,7 @@
 			}
 		},
 		created() {
+			this.loadTypes(); //Fill the select
 			//axios.get('api/profile').then(({ data }) => (this.form.fill(data)));
 			this.$Progress.start()
             axios.get('api/profile')

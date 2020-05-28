@@ -12,5 +12,6 @@
         'profileName'=>'Nombre',
         'profileEmail'=>'Correo',
         'profileBiography'=>'Biografia',
+        'profileTypeUser'=>'Type User'
     ]
 ?>

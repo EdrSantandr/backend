@@ -2257,10 +2257,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       userPhoto: '',
+      types: {},
       form: new Form({
         id: '',
         name: '',
@@ -2268,7 +2279,8 @@ __webpack_require__.r(__webpack_exports__);
         password: '',
         type: '',
         bio: '',
-        photo: ''
+        photo: '',
+        type_id: ''
       })
     };
   },
@@ -2303,8 +2315,18 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
-    updateProfilePhoto: function updateProfilePhoto(e) {
+    loadTypes: function loadTypes() {
       var _this2 = this;
+
+      if (this.$gate.isAdminOrAuthor()) {
+        axios.get('api/types').then(function (_ref) {
+          var data = _ref.data;
+          return _this2.types = data;
+        });
+      }
+    },
+    updateProfilePhoto: function updateProfilePhoto(e) {
+      var _this3 = this;
 
       //console.log('Event uploading');
       var file = e.target.files[0];
@@ -2315,7 +2337,7 @@ __webpack_require__.r(__webpack_exports__);
 
         reader.onload = function (file) {
           //console.log(reader.result);
-          _this2.form.photo = reader.result;
+          _this3.form.photo = reader.result;
         };
 
         reader.onerror = function (error) {
@@ -2331,27 +2353,29 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this4 = this;
 
+    this.loadTypes(); //Fill the select
     //axios.get('api/profile').then(({ data }) => (this.form.fill(data)));
+
     this.$Progress.start();
-    axios.get('api/profile').then(function (_ref) {
-      var data = _ref.data;
-      _this3.userPhoto = "img/profile/" + data.photo;
+    axios.get('api/profile').then(function (_ref2) {
+      var data = _ref2.data;
+      _this4.userPhoto = "img/profile/" + data.photo;
       Fire.$on('AfterUpdate', function () {
         axios.get('api/profile').then(function (data) {
           var photo = data.data.photo;
-          _this3.userPhoto = "img/profile/" + photo;
+          _this4.userPhoto = "img/profile/" + photo;
         });
       });
 
-      _this3.form.reset();
+      _this4.form.reset();
 
-      _this3.form.fill(data);
+      _this4.form.fill(data);
 
-      _this3.$Progress.finish();
+      _this4.$Progress.finish();
     })["catch"](function () {
-      _this3.$Progress.fail();
+      _this4.$Progress.fail();
     });
   }
 });
@@ -2502,7 +2526,7 @@ __webpack_require__.r(__webpack_exports__);
 
       $('#addNew').modal('show');
     },
-    deleteUser: function deleteUser(id) {
+    deleteType: function deleteType(id) {
       var _this3 = this;
 
       swal.fire({
@@ -2516,7 +2540,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         //Send Request to server to the server	
         if (result.value) {
-          _this3.form["delete"]('api/user/' + id).then(function () {
+          _this3.form["delete"]('api/type/' + id).then(function () {
             swal.fire('Deleted!', 'Your type has been deleted.', 'success');
             Fire.$emit('AfterCreate');
           })["catch"](function () {
@@ -66234,6 +66258,73 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-group" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-form-label",
+                                attrs: { for: "type_id" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("master.profileTypeUser")))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.type_id,
+                                    expression: "form.type_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "type_id",
+                                  "v-bind": _vm.form.type_id
+                                },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "type_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              _vm._l(_vm.types, function(type) {
+                                return _c(
+                                  "option",
+                                  { key: type, domProps: { value: type.id } },
+                                  [_vm._v(_vm._s(type.name))]
+                                )
+                              }),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _c("has-error", {
+                              attrs: { form: _vm.form, field: "type_id" }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
                         _c("div", { staticClass: "form-group" }, [
                           _c(
                             "label",
@@ -66617,7 +66708,7 @@ var render = function() {
                               attrs: { href: "#" },
                               on: {
                                 click: function($event) {
-                                  return _vm.deleteUser(type.id)
+                                  return _vm.deleteType(type.id)
                                 }
                               }
                             },

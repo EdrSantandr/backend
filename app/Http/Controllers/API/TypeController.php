@@ -122,4 +122,9 @@ class TypeController extends Controller
         }
         return $types;
     }
+    public function loadAllTypes()
+    {
+        return Type::all();
+    }
+
 }

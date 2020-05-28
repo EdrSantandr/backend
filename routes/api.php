@@ -28,3 +28,4 @@ Route::middleware('auth:api')->get('/type', function (Request $request) {
 });
 Route::apiResources(['type' => 'API\TypeController']);
 Route::get('findType', 'API\TypeController@search');
+Route::get('types', 'API\TypeController@loadAllTypes');
