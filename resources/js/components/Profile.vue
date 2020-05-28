@@ -159,7 +159,7 @@
 											<label for="type_id" class="col-form-label">{{ __('master.profileTypeUser') }}</label>
 											
 											<select name="type_id" v-model="form.type_id" class="form-control" :v-bind="form.type_id">
-												<option  v-for="type in types" :value="type.id" v-bind:key="type">{{ type.name }}</option>
+												<option  v-for="type in types" :value="type.id" :key="type.id">{{ type.name }}</option>
 											</select>
 											<has-error :form="form" field="type_id"></has-error>
 

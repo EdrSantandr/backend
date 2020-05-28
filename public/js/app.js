@@ -66311,7 +66311,10 @@ var render = function() {
                               _vm._l(_vm.types, function(type) {
                                 return _c(
                                   "option",
-                                  { key: type, domProps: { value: type.id } },
+                                  {
+                                    key: type.id,
+                                    domProps: { value: type.id }
+                                  },
                                   [_vm._v(_vm._s(type.name))]
                                 )
                               }),
