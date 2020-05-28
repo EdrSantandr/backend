@@ -9,6 +9,7 @@
         'dashboard' => 'Menu',
         'user_type'=>'Tipo de usuario',
         'story'=>'Historia',
+        'game'=>'Juego',
         /** PROFILE COMPONENT VUE**/
         'profileName'=>'Nombre',
         'profileEmail'=>'Correo',

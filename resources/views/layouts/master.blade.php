@@ -217,6 +217,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </p>
                         </router-link>
                     </li>
+                    <!-- Nuevo enlace para game-->
+                    <li class="nav-item has-treeview">
+                        <router-link to="/games" class="nav-link">
+                        <i class="nav-icon fas fa-gamepad green"></i>
+                            <p>
+                                {{ __('master.game') }}
+                            </p>
+                        </router-link>
+                    </li>
                     @can('isAdmin')
 					<li class="nav-item">
                         <router-link to="/developer" class="nav-link">

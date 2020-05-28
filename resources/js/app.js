@@ -95,6 +95,11 @@ const router = new Router ({
 			component:	require('./components/Users.vue').default
 		},
 		{
+			path:	'/games',
+			name:	'games',
+			component:	require('./components/Games.vue').default
+		},
+		{
 			path:	'/types',
 			name:	'types',
 			component:	require('./components/Types.vue').default

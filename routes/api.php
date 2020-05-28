@@ -36,3 +36,10 @@ Route::middleware('auth:api')->get('/story', function (Request $request) {
 });
 Route::apiResources(['story' => 'API\StoryController']);
 Route::get('findStory', 'API\StoryController@search');
+
+/** Routes for Game**/
+Route::middleware('auth:api')->get('/game', function (Request $request) {
+    return $request->game();
+});
+Route::apiResources(['game' => 'API\GameController']);
+Route::get('findGame', 'API\GameController@search');
