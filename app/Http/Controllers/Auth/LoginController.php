@@ -8,6 +8,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use \Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -40,6 +41,26 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    public function redirectTo()
+    {
+        if (auth()->user()->type === 'admin') {
+            return '/home';
+        }
+        if (auth()->user()->type !== 'admin') {
+            return '/eder';
+        }
+        return '/';
+    }
+
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+    }
+    
     /**
      * Redirect the user to the GitHub authentication page.
      *
