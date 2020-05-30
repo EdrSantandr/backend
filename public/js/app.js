@@ -2434,6 +2434,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.groups = response.data;
       });
     },
+    getImgUrl: function getImgUrl(url) {
+      return './img/groups/' + url;
+    },
     updateGroup: function updateGroup() {
       var _this2 = this;
 
@@ -67405,7 +67408,15 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(group.title))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(group.photo))]),
+                        _c("td", [
+                          _c("img", {
+                            staticClass: "img-size-50 mr-3 img-circle",
+                            attrs: {
+                              src: _vm.getImgUrl(group.photo),
+                              alt: "User Avatar"
+                            }
+                          })
+                        ]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(group.url))]),
                         _vm._v(" "),

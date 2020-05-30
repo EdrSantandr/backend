@@ -115,6 +115,11 @@ class GroupController extends Controller
 			//Create an image manager
 		    \Image::make($request->photo)->save(public_path('img/groups/').$name);
             $request->merge(['photo' =>$name]);
+
+            $groupPhoto=public_path('img/groups/').$group->photo;
+			if (file_exists($groupPhoto)){
+				@unlink($groupPhoto);
+			}
         }
         $group->update($request->all());
         return ['message' => 'success'];

@@ -25,7 +25,7 @@
 								<tr v-for="group in groups.data" :key="group.id">
 									<td>{{ group.id }}</td>
 									<td>{{ group.title }}</td>
-									<td>{{ group.photo }}</td>
+									<td><img v-bind:src="getImgUrl(group.photo)" alt="User Avatar" class="img-size-50 mr-3 img-circle"> </td>
 									<td>{{ group.url }}</td>
 									<td>
 										<a href="#" @click="editModal( group )">
@@ -113,7 +113,7 @@
 <script>
     export default {
 		data(){
-			return{
+			return{				
 				editMode : false,
 				groups : {},
 				form: new Form({
@@ -130,6 +130,9 @@
 					axios.get('api/group?page=' + page).then(response => {
 					this.groups = response.data;
 				});
+			},
+			getImgUrl(url) {
+				return './img/groups/'+url;
 			},
 			updateGroup(){
 				this.$Progress.start();
