@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/eder', 'HomeController@eder')->name('eder');
+Route::get('/eder', 'GeneralController@index')->name('home');
 
 /* Routes for socialite FACEBOOK */
 Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFacebook');

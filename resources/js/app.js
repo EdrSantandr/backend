@@ -100,6 +100,11 @@ const router = new Router ({
 			component:	require('./components/Games.vue').default
 		},
 		{
+			path:	'/groups',
+			name:	'groups',
+			component:	require('./components/Groups.vue').default
+		},
+		{
 			path:	'/types',
 			name:	'types',
 			component:	require('./components/Types.vue').default

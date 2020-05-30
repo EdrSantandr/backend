@@ -43,3 +43,9 @@ Route::middleware('auth:api')->get('/game', function (Request $request) {
 });
 Route::apiResources(['game' => 'API\GameController']);
 Route::get('findGame', 'API\GameController@search');
+/** Routes for Group**/
+Route::middleware('auth:api')->get('/group', function (Request $request) {
+    return $request->group();
+});
+Route::apiResources(['group' => 'API\GroupController']);
+Route::get('findGroup', 'API\GroupController@search');

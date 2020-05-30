@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">EDER EDER</div>
+                <div class="card-header">ACA VA VENIR TODO LO DE GAMIFICATION</div>
 				
                 
 			</div>

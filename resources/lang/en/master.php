@@ -10,6 +10,7 @@
         'user_type'=>'User type',
         'story'=>'Story',
         'game'=>'Game',
+        'group'=>'Groups',
         /** PROFILE COMPONENT VUE**/
         'profileName'=>'Name',
         'profileEmail'=>'E-mail',

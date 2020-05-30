@@ -208,6 +208,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </p>
                         </router-link>
                     </li>
+                    <!-- Nuevo enlace para groups-->
+                    <li class="nav-item has-treeview">
+                        <router-link to="/groups" class="nav-link">
+                        <i class="nav-icon fas fa-theater-masks blue"></i>
+                            <p>
+                                {{ __('master.group') }}
+                            </p>
+                        </router-link>
+                    </li>
                     <!-- Nuevo enlace para story-->
                     <li class="nav-item has-treeview">
                         <router-link to="/stories" class="nav-link">
