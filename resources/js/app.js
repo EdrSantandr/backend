@@ -42,6 +42,11 @@ import VueScreenSize from 'vue-screen-size'
 /** Vue Animation Effects**/
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+/** Vue scroll down effect**/
+import 'animate.css'
+import 'fullpage-vue/src/fullpage.css'
+import VueFullpage from 'fullpage-vue'
+
 
 /**File input**/
 import bsCustomFileInput from 'bs-custom-file-input'
@@ -83,9 +88,13 @@ window.toast=toast;
 /** Screensize**/
 Vue.use(VueScreenSize)
 
-/** Scroll animado**/
+/** animaciones de elementos**/
 AOS.init()
 
+/** Scroll down animations**/
+Vue.use(VueFullpage)
+
+/** Rutas**/
 const router = new Router ({
 	mode:	'history',
 	routes: [
