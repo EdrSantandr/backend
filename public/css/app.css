@@ -31094,6 +31094,18 @@ a.text-muted:hover {
   color: #ffffff;
 }@charset "UTF-8";
 
+.red-impro {
+  color: #9C2420 !important;
+}
+
+.white-impro {
+  color: #FFFFFF !important;
+}
+
+.grey-impro {
+  color: #EBECEC !important;
+}
+
 .blue {
   color: #3490dc !important;
 }
@@ -31132,6 +31144,30 @@ a.text-muted:hover {
 
 .cyan {
   color: #6cb2eb !important;
+}
+
+.cairo-bold {
+  font-family: "Cairo", sans-serif;
+  font-weight: 900;
+}
+
+.cairo-regular {
+  font-family: "Cairo", sans-serif;
+  font-weight: 600;
+}
+
+.cairo-thin {
+  font-family: "Cairo", sans-serif;
+  font-weight: 300;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
 }
 
 /*!
@@ -48112,5 +48148,12 @@ readers do not read off random characters that represent icons */
 .router-link-exact-active {
   background-color: #6c757d;
   color: #fff !important;
+}
+
+.landing {
+  background-color: #9C2420 !important;
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
 }
 

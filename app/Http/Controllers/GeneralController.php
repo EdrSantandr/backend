@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Group;
 
 class GeneralController extends Controller
 {
@@ -17,7 +18,7 @@ class GeneralController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('eder');
+    {        
+        return view('landing');
     }
 }

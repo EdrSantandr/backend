@@ -12,15 +12,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+Route::get('/', function () {
+    return view('landing');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/eder', 'GeneralController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
 
 /* Routes for socialite FACEBOOK */
 Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFacebook');

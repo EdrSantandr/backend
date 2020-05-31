@@ -37,6 +37,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 /**Sweetalert**/
 import swal from 'sweetalert2'
+/** VUE SCREEN SIZE**/
+import VueScreenSize from 'vue-screen-size'
+/** Vue Animation Effects**/
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 /**File input**/
 import bsCustomFileInput from 'bs-custom-file-input'
@@ -75,6 +80,11 @@ const toast = swal.mixin({
 });
 window.toast=toast;
 
+/** Screensize**/
+Vue.use(VueScreenSize)
+
+/** Scroll animado**/
+AOS.init()
 
 const router = new Router ({
 	mode:	'history',
@@ -118,6 +128,11 @@ const router = new Router ({
 			path:	'/profile',
 			name:	'profile',
 			component:	require('./components/Profile.vue').default
+		},
+		{
+			path:	'/',
+			name:	'home',
+			component:	require('./components/Home.vue').default
 		},
 		{
 			path:	'/*',

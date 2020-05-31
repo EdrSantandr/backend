@@ -6,6 +6,17 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+// Typography CAIRO
+$font-family-cairo: 'Cairo', sans-serif;
+$font-size-cairo: 0.9rem;
+$line-height-cairo: 1.6;
+
+// Typography roboto
+$font-family-roboto: 'Roboto', sans-serif;
+$font-size-roboto: 0.9rem;
+$line-height-roboto: 1.6;
+
+
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;
@@ -17,6 +28,19 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$red_impro:#9C2420;
+$white_impro:#FFFFFF;
+$grey_impro:#EBECEC;
+
+.red-impro{
+	color: $red_impro !important;
+}
+.white-impro{
+	color: $white_impro !important;
+}
+.grey-impro{
+	color: $grey_impro !important;
+}
 
 .blue{
 	color: $blue !important;
@@ -47,4 +71,23 @@ $cyan: #6cb2eb;
 }
 .cyan{
 	color: $cyan !important;
+}
+.cairo-bold{
+	font-family: $font-family-cairo;
+	font-weight: 900;
+}
+.cairo-regular{
+	font-family: $font-family-cairo;
+	font-weight: 600;
+}
+.cairo-thin{
+	font-family: $font-family-cairo;
+	font-weight: 300;
+}
+.roboto-bold{
+	font-family: $font-family-roboto;
+	font-weight: bold;
+}
+.roboto-regular{
+	font-family: $font-family-roboto;	
 }

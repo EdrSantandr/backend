@@ -1,0 +1,71 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+//Fontawesome
+$fa-font-path: "../webfonts";
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+// AdminLTE
+//@import '~admin-lte/dist/css/adminlte.css';
+
+//FontAwesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+.router-link-exact-active{
+	background-color: #6c757d;
+	color: #fff !important;
+}
+
+.landing{
+    height: 100vh;
+    background-color: $red_impro !important;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    background-size: cover;     
+}
+
+.body{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.titulo{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+*{
+    margin: 0px;
+    padding: 0px; 
+}
+
+#down{
+    position: absolute;
+    top:85vh;
+    padding: 20px;
+    font-size: 2.5em;
+}
+#down:hover{
+    cursor: pointer;
+    background-color: #eee;
+    opacity: 0.8;
+}
+#bloque2{
+    margin-top: 500px;
+    background-color: $grey_impro !important;
+    height: 500px;
+}
