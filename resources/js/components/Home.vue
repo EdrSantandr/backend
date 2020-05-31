@@ -8,35 +8,39 @@
                     <button type="button" v-for="btn in pageNum" :key="btn" :class="{active:index == btn + 2}" @click="moveTo(btn+2)">page {{btn+2}}</button>
                     <button type="button" @click="showPage()">add page</button>
                 </div>
+				<div class="button-bottom">
+					
+				</div>
                 <div class="fullpage-vertical">
                     <div class="" v-fullpage="opts" ref="fullpage">
                     <div class="page-1 page">
-                        <h1 class="part-1" v-animate="{value: 'bounceInLeft'}">vue-fullpage.js</h1>
-                        <h3 class="" v-animate="{value: 'bounceInLeft'}">A sigle-page scroll plugin based on vue@2.x,support for mobile and PC .</h3>
-                        <div>
-                            <p class="part-1" v-animate="{value: 'bounceInRight'}">vue-fullpage</p>
-                        </div>
+                    	<div class="">
+							<object class="svg-image animate__animated animate__tada animate__slower" type="image/svg+xml" data="img/app/improgamesfigure.svg">
+                                <h3>Impro.games</h3>
+                            </object>
+							<object class="svg-image animate__animated animate__heartBeat animate__slow" type="image/svg+xml" data="img/app/improgameslogo.svg">
+                                <h3>Impro.games</h3>
+                            </object>
+                    	    <div class="blank" ></div>
+                            <a href="#" class="customButton center">registrarme</a>
+                            <div class="blank" ></div>
+                            <a href="#" class="customButton center">iniciar sesi&oacute;n</a>
+						</div>
                     </div>
-                    <div class="page-2 page" >
-                        <div class="fullpage-horizontal">
-                            <div v-fullpage="horizontalOpts" ref="fullpageHorizontal">
-                                <div class="page-4 page">
-                                    <h2 class="part-2" v-animate="{value: 'bounceInRight'}">Easy to use plugin</h2>
-                                    <p v-animate="{value: 'bounceInRight'}">nesting</p>    
-                                    <p v-animate="{value: 'bounceInRight'}">
-                                        horizontal 1
-                                    </p>
-                                </div>
-                                <div class="page-5 page">
-                                    <p v-animate="{value: 'bounceInDown'}">horizontal 2</p>
-                                </div>
-                            </div>
-                            <div class="fullpage-pagination">
-                                <div class="fullpage-pagination-bullet" 
-                                    v-for="(i,index) in [0,1]" :key="i"
-                                    :class="{'fullpage-pagination-bullet__active':active2==index}"></div>
-                            </div>
-                        </div>
+                    <div class="page-2 page">
+                        <div class="blank" ></div>                        
+                        <img class="custom-img custom-shadow" src="img/app/eder.jpg" alt="eder santander impro games">
+                        <div class="blank" ></div>
+                        <!--TEXTO-->
+                        <p class="custom-paragraph"> Me llamo Eder, soy Ing. Inform&aacute;tico de profesi&oacute;n,
+                            cocinero, pichanguero (me gusta el f&uacute;tbol) e improvisador
+                            en formaci&oacute;n. Decid&iacute; unir mis dos pasiones en este proyecto
+                            la impro y mi lado ingenieril. Usando las mejores tecnolog&iacute;as y
+                            mi conocimiento de las din&aacute;micas de improvisaci&oacute;n teatral.
+                            Espero que les guste
+
+                        </p>
+
                     </div>
                     <div class="page-3 page" v-animate="{value: 'zoomInDown', delay: 100}">
                         <h2 class="part-3" v-animate="{value: 'bounceInLeft'}">Working On Tablets</h2>
@@ -50,11 +54,7 @@
                         <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
                     </div>
                 </div>
-                <div class="fullpage-pagination">
-                    <div class="fullpage-pagination-bullet" 
-                        v-for="(i,indx) in [0,1,2]" :key="i"
-                        :class="{'fullpage-pagination-bullet__active':index==indx}"></div>
-                </div>
+                
                 </div>
             </div>
 </template>

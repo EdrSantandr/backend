@@ -1,5 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Cairo:wght@200;
 
+300;600;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap);@charset "UTF-8";
 .red-impro {
   color: #9C2420 !important;
 }
@@ -6118,9 +6119,50 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
-.router-link-exact-active {
-  background-color: #6c757d;
-  color: #fff !important;
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+.fullpage-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fullpage-wp {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fullpage-wp.anim {
+  transform: translate3d(0, 0, 0);
+  transition: all 500ms ease-out 0s;
+}
+
+.fullpage-wp.fullpage-wp-h {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.page {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.animated {
+  opacity: 1;
 }
 
 body {
@@ -6136,11 +6178,11 @@ body {
 
 .page-1 {
   padding-top: 100px;
-  background: #1bbc9b;
+  background: #9C2420;
 }
 
 .page-2 {
-  background-color: #4bbfc3;
+  background: #EBECEC;
 }
 
 .page-3 {
@@ -6238,5 +6280,77 @@ p {
 button.disabled-btn {
   background: red;
   color: #fff;
+}
+
+/**Custom css for home**/
+
+.svg-image {
+  width: 60%;
+  max-width: 515px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+
+.impro-text {
+  height: 40%;
+}
+
+.center {
+  display: flex;
+  margin: 0 auto;
+}
+
+.customButton {
+  box-shadow: 0px 10px 14px -7px #EBECEC;
+  background: linear-gradient(to bottom, #FFFFFF 5%, #EBECEC 100%);
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  display: inline-block;
+  cursor: pointer;
+  color: #9C2420;
+  font-family: "Cairo", sans-serif;
+  padding: 5px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #EBECEC;
+  min-width: 180px;
+  max-width: 270px;
+  width: 100%;
+}
+
+.customButton:hover {
+  background: linear-gradient(to bottom, #FFFFFF 20%, #EBECEC 100%);
+  background-color: #FFFFFF;
+  font-weight: bold;
+}
+
+.customButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.blank {
+  width: 100%;
+  height: 0.5%;
+  display: inline-block;
+}
+
+.custom-img {
+  border-radius: 50%;
+  height: 15%;
+  max-height: 200px;
+}
+
+.custom-shadow {
+  box-shadow: 6px 3px 10px 10px rgba(77, 77, 77, 0.22);
+}
+
+.custom-paragraph {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #4d4d4d;
+  line-height: 2;
+  font-size: inherit;
+  padding: 1em;
 }
 

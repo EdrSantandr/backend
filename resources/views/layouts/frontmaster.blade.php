@@ -13,11 +13,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
     <!-- Styles -->
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;600;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
     <!--PWA Changes-->
     @laravelPWA
 </head>

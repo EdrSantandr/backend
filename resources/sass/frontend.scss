@@ -1,5 +1,6 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;600;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
 
 // Variables
 @import 'variables';
@@ -17,9 +18,45 @@ $fa-font-path: "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-.router-link-exact-active{
-	background-color: #6c757d;
-	color: #fff !important;
+* {
+    -webkit-overflow-scrolling: touch;
+}
+.fullpage-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.fullpage-wp {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fullpage-wp.anim {
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 500ms ease-out 0s;
+    transition: all 500ms ease-out 0s;
+}
+.fullpage-wp.fullpage-wp-h {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.animated {
+    opacity: 1;
 }
 body {
     margin: 0;
@@ -33,13 +70,12 @@ body {
     color: #eee;
 }
 .page-1 {
-
     padding-top: 100px;
-    background: #1bbc9b;
+    background: $red_impro;
 }
 
 .page-2 {
-    background-color: rgb(75, 191, 195);
+    background: $grey_impro;
 }
 
 .page-3 {
@@ -136,4 +172,67 @@ p {
 button.disabled-btn{
     background: red;
         color: #fff;
+}
+/**Custom css for home**/
+.svg-image{
+    width: 60%;
+    max-width: 515px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+}
+.impro-text{
+    height: 40% ;    
+}
+.center{
+    display: flex;
+    margin: 0 auto;
+}
+.customButton {
+	box-shadow: 0px 10px 14px -7px $grey_impro;
+	background:linear-gradient(to bottom, $white_impro 5%, $grey_impro 100%);
+	background-color:$white_impro;
+	border-radius:25px;
+	display:inline-block;
+	cursor:pointer;
+	color:$red_impro;
+	font-family: $font-family-cairo;
+	padding:5px 30px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px $grey_impro;
+    min-width: 180px;
+    max-width: 270px;
+    width: 100%;
+}
+.customButton:hover {
+	background:linear-gradient(to bottom, $white_impro 20%, $grey_impro 100%);
+    background-color:$white_impro;
+    font-weight: bold;
+}
+.customButton:active {
+	position:relative;
+	top:1px;
+}
+.blank{
+    width: 100%;
+    height: 0.5%;
+    display: inline-block;
+}
+.custom-img {
+    border-radius: 50%;    
+    height: 15%;
+    max-height: 200px;
+}
+.custom-shadow{
+    -webkit-box-shadow: 6px 3px 10px 10px $shadow;
+    -moz-box-shadow: 6px 3px 10px 10px $shadow;
+    box-shadow: 6px 3px 10px 10px $shadow;
+}
+.custom-paragraph{
+    font-family: $font-family-roboto;
+    font-weight: 100;
+    color:$black_impro;
+    line-height: 2;
+    font-size: inherit;
+    padding: 1em;
 }

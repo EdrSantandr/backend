@@ -68818,6 +68818,8 @@ var render = function() {
       2
     ),
     _vm._v(" "),
+    _c("div", { staticClass: "button-bottom" }),
+    _vm._v(" "),
     _c("div", { staticClass: "fullpage-vertical" }, [
       _c(
         "div",
@@ -68833,164 +68835,9 @@ var render = function() {
           ref: "fullpage"
         },
         [
-          _c("div", { staticClass: "page-1 page" }, [
-            _c(
-              "h1",
-              {
-                directives: [
-                  {
-                    name: "animate",
-                    rawName: "v-animate",
-                    value: { value: "bounceInLeft" },
-                    expression: "{value: 'bounceInLeft'}"
-                  }
-                ],
-                staticClass: "part-1"
-              },
-              [_vm._v("vue-fullpage.js")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h3",
-              {
-                directives: [
-                  {
-                    name: "animate",
-                    rawName: "v-animate",
-                    value: { value: "bounceInLeft" },
-                    expression: "{value: 'bounceInLeft'}"
-                  }
-                ]
-              },
-              [
-                _vm._v(
-                  "A sigle-page scroll plugin based on vue@2.x,support for mobile and PC ."
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "p",
-                {
-                  directives: [
-                    {
-                      name: "animate",
-                      rawName: "v-animate",
-                      value: { value: "bounceInRight" },
-                      expression: "{value: 'bounceInRight'}"
-                    }
-                  ],
-                  staticClass: "part-1"
-                },
-                [_vm._v("vue-fullpage")]
-              )
-            ])
-          ]),
+          _vm._m(0),
           _vm._v(" "),
-          _c("div", { staticClass: "page-2 page" }, [
-            _c("div", { staticClass: "fullpage-horizontal" }, [
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "fullpage",
-                      rawName: "v-fullpage",
-                      value: _vm.horizontalOpts,
-                      expression: "horizontalOpts"
-                    }
-                  ],
-                  ref: "fullpageHorizontal"
-                },
-                [
-                  _c("div", { staticClass: "page-4 page" }, [
-                    _c(
-                      "h2",
-                      {
-                        directives: [
-                          {
-                            name: "animate",
-                            rawName: "v-animate",
-                            value: { value: "bounceInRight" },
-                            expression: "{value: 'bounceInRight'}"
-                          }
-                        ],
-                        staticClass: "part-2"
-                      },
-                      [_vm._v("Easy to use plugin")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        directives: [
-                          {
-                            name: "animate",
-                            rawName: "v-animate",
-                            value: { value: "bounceInRight" },
-                            expression: "{value: 'bounceInRight'}"
-                          }
-                        ]
-                      },
-                      [_vm._v("nesting")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        directives: [
-                          {
-                            name: "animate",
-                            rawName: "v-animate",
-                            value: { value: "bounceInRight" },
-                            expression: "{value: 'bounceInRight'}"
-                          }
-                        ]
-                      },
-                      [
-                        _vm._v(
-                          "\n                                        horizontal 1\n                                    "
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "page-5 page" }, [
-                    _c(
-                      "p",
-                      {
-                        directives: [
-                          {
-                            name: "animate",
-                            rawName: "v-animate",
-                            value: { value: "bounceInDown" },
-                            expression: "{value: 'bounceInDown'}"
-                          }
-                        ]
-                      },
-                      [_vm._v("horizontal 2")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "fullpage-pagination" },
-                _vm._l([0, 1], function(i, index) {
-                  return _c("div", {
-                    key: i,
-                    staticClass: "fullpage-pagination-bullet",
-                    class: {
-                      "fullpage-pagination-bullet__active": _vm.active2 == index
-                    }
-                  })
-                }),
-                0
-              )
-            ])
-          ]),
+          _vm._m(1),
           _vm._v(" "),
           _c(
             "div",
@@ -69128,24 +68975,76 @@ var render = function() {
           })
         ],
         2
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "fullpage-pagination" },
-        _vm._l([0, 1, 2], function(i, indx) {
-          return _c("div", {
-            key: i,
-            staticClass: "fullpage-pagination-bullet",
-            class: { "fullpage-pagination-bullet__active": _vm.index == indx }
-          })
-        }),
-        0
       )
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-1 page" }, [
+      _c("div", {}, [
+        _c(
+          "object",
+          {
+            staticClass:
+              "svg-image animate__animated animate__tada animate__slower",
+            attrs: {
+              type: "image/svg+xml",
+              data: "img/app/improgamesfigure.svg"
+            }
+          },
+          [_c("h3", [_vm._v("Impro.games")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "object",
+          {
+            staticClass:
+              "svg-image animate__animated animate__heartBeat animate__slow",
+            attrs: { type: "image/svg+xml", data: "img/app/improgameslogo.svg" }
+          },
+          [_c("h3", [_vm._v("Impro.games")])]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "blank" }),
+        _vm._v(" "),
+        _c("a", { staticClass: "customButton center", attrs: { href: "#" } }, [
+          _vm._v("registrarme")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "blank" }),
+        _vm._v(" "),
+        _c("a", { staticClass: "customButton center", attrs: { href: "#" } }, [
+          _vm._v("iniciar sesión")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-2 page" }, [
+      _c("div", { staticClass: "blank" }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "custom-img custom-shadow",
+        attrs: { src: "img/app/eder.jpg", alt: "eder santander impro games" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "blank" }),
+      _vm._v(" "),
+      _c("p", { staticClass: "custom-paragraph" }, [
+        _vm._v(
+          " Me llamo Eder, soy Ing. Informático de profesión,\n                            cocinero, pichanguero (me gusta el fútbol) e improvisador\n                            en formación. Decidí unir mis dos pasiones en este proyecto\n                            la impro y mi lado ingenieril. Usando las mejores tecnologías y\n                            mi conocimiento de las dinámicas de improvisación teatral.\n                            Espero que les guste\n\n                        "
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
